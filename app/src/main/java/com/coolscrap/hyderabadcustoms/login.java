@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class login extends AppCompatActivity {
+public class  login extends AppCompatActivity {
 
     EditText et1,et2;
     Button b1;
@@ -34,6 +34,7 @@ public class login extends AppCompatActivity {
                 if(user.equals(user1) && pass.equals(pass1) && !user.equals(null) && !user.equals(null)){
                     Intent i =new Intent(login.this,SQLView.class);
                     startActivity(i);
+                    finish();
                 }
             }
         });

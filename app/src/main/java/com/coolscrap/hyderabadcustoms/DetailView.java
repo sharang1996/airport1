@@ -25,7 +25,7 @@ public class DetailView extends AppCompatActivity {
         info.open();
         String s = info.getData();
         int s1= info.getAngry();
-        int s2= info.getHappy();
+        int s2= info.getEnjoyed();
         int s3= info.getSatisfied();
         tvData.setText(s);
        /* ang.setText(s1);
@@ -38,6 +38,7 @@ public class DetailView extends AppCompatActivity {
                 Intent i = new Intent(DetailView.this,login.class);
                 finish();
                 startActivity(i);
+                finish();
                 return;
             }
 

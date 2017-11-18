@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/shubham/Downloads/HyderabadCustoms (2)/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
-        "source": "/home/shubham/Downloads/HyderabadCustoms (2)/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\home\\shubham\\Downloads\\HyderabadCustoms (2)\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\home\\shubham\\Downloads\\HyderabadCustoms (2)\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Sharang\\Workspace\\Android Studio Projects\\airport1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Sharang\\Workspace\\Android Studio Projects\\airport1\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     }
 ]

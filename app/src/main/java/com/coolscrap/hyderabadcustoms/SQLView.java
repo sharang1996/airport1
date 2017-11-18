@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.MessageFormat;
+
 public class SQLView extends AppCompatActivity {
     public Button b1;
     public TextView tvAngry;
@@ -30,34 +32,38 @@ public class SQLView extends AppCompatActivity {
                 tvAngry = (TextView)findViewById(R.id.textView4);
                 tvSatisfied = (TextView)findViewById(R.id.textView5);
                 tvHappy = (TextView)findViewById(R.id.textView6);
-                tvData = (TextView)findViewById(0x7f0d0080);
-                tva = (TextView)findViewById(0x7f0d0097);
-                tvn = (TextView)findViewById(0x7f0d0099);
-                tvsat = (TextView)findViewById(0x7f0d009b);
+                tvData = (TextView)findViewById(R.id.com);
+                tva = (TextView)findViewById(R.id.ang);
+                tvn = (TextView)findViewById(R.id.neu);
+                tvsat = (TextView)findViewById(R.id.sat);
+
                 FeedbackDatabase bundle = new FeedbackDatabase(this);
                 bundle.open();
+
                 String s = bundle.getComments();
-                bundle.getAngry();
                 int i = bundle.getSad();
                 int j = bundle.getSatisfied();
-                bundle.getHappy();
                 int k = bundle.getEnjoyed();
                 bundle.close();
+
                 tvAngry.setText("\tSAD            \t\t\t\t");
                 tvSatisfied.setText("\tNEUTRAL  \t\t\t\t");
                 tvHappy.setText("\tHAPPY       \t\t\t\t");
+
+                tva.setText(MessageFormat.format("{0}", i));
+                tvn.setText(MessageFormat.format("{0}", j));
+                tvsat.setText(MessageFormat.format("{0}", k));
+
                 tvData.setText(s);
                 b1 = (Button)findViewById(R.id.btDetail);
                 b1.setOnClickListener(new android.view.View.OnClickListener() {
 
                     public void onClick(View view)
-                    {       Intent i = new Intent(SQLView.this,DetailView.class);
+                    {
+                        Intent i = new Intent(SQLView.this,DetailView.class);
                         finish();
                         startActivity(i);
-                        return;
                     }
-
-
                 });
             }
 

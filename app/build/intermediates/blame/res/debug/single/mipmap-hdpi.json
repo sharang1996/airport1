@@ -1,14 +1,26 @@
 [
     {
-        "merged": "/home/shubham/Downloads/HyderabadCustoms (2)/app/build/intermediates/res/merged/debug/mipmap-hdpi/custom.png",
-        "source": "/home/shubham/Downloads/HyderabadCustoms (2)/app/src/main/res/mipmap-hdpi/custom.png"
+        "merged": "C:\\Users\\Sharang\\Workspace\\Android Studio Projects\\airport1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Sharang\\Workspace\\Android Studio Projects\\airport1\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "/home/shubham/Downloads/HyderabadCustoms (2)/app/build/intermediates/res/merged/debug/mipmap-hdpi/clogo.png",
-        "source": "/home/shubham/Downloads/HyderabadCustoms (2)/app/src/main/res/mipmap-hdpi/clogo.png"
+        "merged": "C:\\Users\\Sharang\\Workspace\\Android Studio Projects\\airport1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\custom.png",
+        "source": "C:\\Users\\Sharang\\Workspace\\Android Studio Projects\\airport1\\app\\src\\main\\res\\mipmap-hdpi\\custom.png"
     },
     {
-        "merged": "/home/shubham/Downloads/HyderabadCustoms (2)/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
-        "source": "/home/shubham/Downloads/HyderabadCustoms (2)/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\home\\shubham\\Downloads\\HyderabadCustoms (2)\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\custom.png",
+        "source": "C:\\home\\shubham\\Downloads\\HyderabadCustoms (2)\\app\\src\\main\\res\\mipmap-hdpi\\custom.png"
+    },
+    {
+        "merged": "C:\\Users\\Sharang\\Workspace\\Android Studio Projects\\airport1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\clogo.png",
+        "source": "C:\\Users\\Sharang\\Workspace\\Android Studio Projects\\airport1\\app\\src\\main\\res\\mipmap-hdpi\\clogo.png"
+    },
+    {
+        "merged": "C:\\home\\shubham\\Downloads\\HyderabadCustoms (2)\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\home\\shubham\\Downloads\\HyderabadCustoms (2)\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\home\\shubham\\Downloads\\HyderabadCustoms (2)\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\clogo.png",
+        "source": "C:\\home\\shubham\\Downloads\\HyderabadCustoms (2)\\app\\src\\main\\res\\mipmap-hdpi\\clogo.png"
     }
 ]

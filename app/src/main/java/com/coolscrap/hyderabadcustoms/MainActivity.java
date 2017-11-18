@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,7 +22,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     Button b1;
-    String fName, view, obj, rating;
+    String fName, cname, obj, rating;
     String date;
     ImageButton ib;
     EditText name;
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         final Spinner mr = (Spinner) findViewById(R.id.mister);
         final Spinner country = (Spinner) findViewById(R.id.country);
-        Button button = (Button) findViewById(R.id.subm);
         new SpannableString("HAPPY TO HELP YOU");
         name = (EditText) findViewById(R.id.editText1);
         flno = (EditText) findViewById(R.id.editText2);
@@ -49,24 +50,37 @@ public class MainActivity extends AppCompatActivity {
         satisfied = (ImageButton) findViewById(R.id.satis);
         happy = (ImageButton) findViewById(R.id.happy);
         toDb = (ImageButton) findViewById(R.id.toDb);
-b1=(Button)findViewById(R.id.subm);
+        b1 = (Button) findViewById(R.id.submit);
 
-toDb.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent i =new Intent(MainActivity.this,login.class);
-        startActivity(i);
-    }
-});
+        if (country != null) {
+            country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    cname = adapterView.getItemAtPosition(i).toString();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });
+        }
+
+        toDb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, login.class);
+                startActivity(i);
+            }
+        });
         happy.setOnClickListener(new android.view.View.OnClickListener() {
 
             public void onClick(View view) {
-                rating = "NEUTRAL";
+                rating = "HAPPY";
                 angry.setImageResource(R.drawable.s3);
                 happy.setImageResource(R.drawable.hapfaded);
                 satisfied.setImageResource(R.drawable.n2);
-                Toast.makeText(MainActivity.this, rating, 0).show();
-                return;
+                Toast.makeText(MainActivity.this, rating, Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -78,8 +92,7 @@ toDb.setOnClickListener(new View.OnClickListener() {
                 angry.setImageResource(R.drawable.s3);
                 happy.setImageResource(R.drawable.hap);
                 satisfied.setImageResource(R.drawable.n2faded);
-                Toast.makeText(MainActivity.this, rating, 0).show();
-                return;
+                Toast.makeText(MainActivity.this, rating, Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -90,8 +103,7 @@ toDb.setOnClickListener(new View.OnClickListener() {
                 satisfied.setImageResource(R.drawable.n2);
                 happy.setImageResource(R.drawable.hap);
                 angry.setImageResource(R.drawable.s3faded);
-                Toast.makeText(MainActivity.this, rating, 0).show();
-                return;
+                Toast.makeText(MainActivity.this, rating, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -100,32 +112,30 @@ toDb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String s2 = name.getText().toString().toUpperCase();
-                obj = flno.getText().toString().toUpperCase();
-                String s = pass.getText().toString().toUpperCase();
-                String s1 = comments.getText().toString().toUpperCase();
-                String s3 = DateFormat.getDateTimeInstance().format(new Date());
-                date = s3;
-                    if (s2.equals("") || ((String) (obj)).equals("")  || rating.equals("")) {
-                        Toast.makeText(MainActivity.this, "Please fill the required fields", 0).show();
-                        return;
-                    } else {
-                        fName = (new StringBuilder()).append(s2).toString();
-                        Toast.makeText(MainActivity.this, (new StringBuilder()).append("Hello ").append(fName).append("\n").append("From ").append(view).append("\nFight ").append(((String) (obj))).append("\nHolding ").append(s).append("\nYou were ").append(rating).append("\n").toString(), 1).show();
-                        FeedbackDatabase o;
-                        o = new FeedbackDatabase(MainActivity.this);
-                        o.open();
-                        o.createEntry(fName, obj, view, s, rating, s1, date);
-                        o.close();
-                        name.setText("");
-                        flno.setText("");
-                        pass.setText("");
-                        comments.setText("");
-                        Intent i = new Intent(MainActivity.this, Thankyou.class);
-                        startActivity(i);
-                        return;
-                    }
+                String nme = name.getText().toString().toUpperCase();
+                String fno = flno.getText().toString().toUpperCase();
+                String passport = pass.getText().toString().toUpperCase();
+                String comment = comments.getText().toString().toUpperCase();
+                date = DateFormat.getDateTimeInstance().format(new Date());
+                if(TextUtils.isEmpty(nme) || TextUtils.isEmpty(fno) || TextUtils.isEmpty(rating)) {
+                    Toast.makeText(MainActivity.this, "Please fill the required fields", Toast.LENGTH_SHORT).show();
                 }
+                else {
+                    fName = (new StringBuilder()).append(nme).toString();
+                    Toast.makeText(MainActivity.this, (new StringBuilder()).append("Hello ").append(fName).append("\n").append("From ").append(cname).append("\nFight ").append(((String) (obj))).append("\nHolding ").append(passport).append("\nYou were ").append(rating).append("\n").toString(), Toast.LENGTH_LONG).show();
+                    FeedbackDatabase o;
+                    o = new FeedbackDatabase(MainActivity.this);
+                    o.open();
+                    o.createEntry(fName, fno, cname, passport, rating, comment, date);
+                    o.close();
+                    name.setText("");
+                    flno.setText("");
+                    pass.setText("");
+                    comments.setText("");
+                    Intent i = new Intent(MainActivity.this, Thankyou.class);
+                    startActivity(i);
+                }
+            }
 
         });
     }

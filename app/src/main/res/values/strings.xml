@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Hyderabad Customs</string>
     <string name="title_activity_splash">Splash</string>
+    <string name="hyderabad_customs_welcomes_you">HYDERABAD CUSTOMS WELCOMES YOU</string>
+    <string name="feedback">(Please submit your valuable feedback)</string>
+    <string name="flight_number">FLIGHT NUMBER</string>
+    <string name="passport_optional">PASSPORT (optional)</string>
+    <string name="submit">SUBMIT</string>
+    <string name="user_fb">FEEDBACK (optional)       (max.300 characters)</string>
 
 
     <string-array name="countries">
